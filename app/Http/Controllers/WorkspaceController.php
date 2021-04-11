@@ -10,7 +10,7 @@ class WorkspaceController extends Controller
     function getdata(){
         $workspaces = Team::where('user_id', Auth::id())->get();
         $workspaces = $workspaces->except(['personal_team', '1']);
-        return view("welcome",  ['workspaces' => $workspaces]);
+        return view("dashboard",  ['workspaces' => $workspaces]);
     }
 
     function saveWorkspace(Request $req){

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WorkspaceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WorkspaceController::class,'getdata'])->middleware('auth');
 
 Route::post('/save', [WorkspaceController::class, 'saveWorkspace']);
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [WorkspaceController::class,'getdata'])->name('dashboard');
+
+
+/*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/', [WorkspaceController::class,'getdata']);
 })->name('dashboard');
+Route::get('/dashboard', [WorkspaceController::class,'getdata'])->middleware('auth');
+*/
