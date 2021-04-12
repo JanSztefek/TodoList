@@ -355,6 +355,7 @@
                                     </div>
                                 </div>
                                 <div class="scroll-container">
+                                    
                                     <div class="items-container row blue-v1">
                                         <div class="grid-container">
                                             <div class="row">
@@ -429,70 +430,11 @@
                                             
                                         </div>
                                     </div>
-                                    <div class="items-container row purple-v1">
-                                        <div class="grid-container">
-                                            <div class="row">
-                                                <p class="item-heading" contenteditable="true">Backend 
-                                                </p>
-                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">
-                                                <path d="M0.697979 1.85245C0.29663 1.21275 0.874335 0.389547 1.70949 0.411098L10.551 0.639248C11.3447 0.659726 11.7799 1.43571 11.3452 2.05511L6.75266 8.5993C6.31797 9.2187 5.32833 9.23267 4.94694 8.62479L0.697979 1.85245Z" fill="white"/>
-                                                </svg></span>
-                                                <button class="btn-1 addelement"><img src="./img/plus.svg" alt=""></button>
-                                            </div>
-                                            <p class="text-normal">Comments</p>
-                                            <p class="text-normal">Status</p>
-                                            <p class="text-normal">Date</p>
-                                            <p class="text-normal">Priority</p>
-                                            <button class="btn-1 deletecontainer">
-                                                <img src="./img/trash.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div class="item-body">
-                                            <div class="item row grid-container">
-                                                <div class="row alc grid-item-1">
-                                                    <div class="image">
-                                                        <img src="./img/profile.png" alt="">
-                                                    </div>          
-                                                    <span></span>
-                                                    <p class="item-description" contenteditable="true">Zprovoznit hosting včetně konfigurace</p>
-                                                </div>
-                                                <div class="coments text-normal grid-item-2"></div>
-                                                <div class="status grid-item-3">
-                                                    <span class="active"></span>
-                                                </div>
-                                                <p class="date-added text-normal grid-item-4">April 06</p>
-                                                <div class="priority grid-item-5">
-                                                    <span class="high"></span>
-                                                </div>
-                                                <button class="btn-1 deleteRecord">
-                                                    <img src="./img/delete.svg" alt="">
-                                                </button>
-                                            </div>
-                                            <div class="item row grid-container">
-                                                <div class="row alc grid-item-1">
-                                                    <div class="image">
-                                                        <img src="./img/profile.png" alt="">
-                                                    </div>        
-                                                    <span></span>
-                                                    <p class="item-description" contenteditable="true">Zprovoznit hosting včetně konfigurace</p>
-                                                </div>
-                                                <div class="coments text-normal grid-item-2"></div>
-                                                <div class="status grid-item-3">
-                                                    <span class="active"></span>
-                                                </div>
-                                                <p class="date-added text-normal grid-item-4">April 06</p>
-                                                <div class="priority grid-item-5">
-                                                    <span class="high"></span>
-                                                </div>
-                                                <button class="btn-1 deleteRecord">
-                                                    <img src="./img/delete.svg" alt="">
-                                                </button>  
-                                        </div>
-                                    </div>
+                                    
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div class="containerInfoAboutProject">
                                 <div class="contentpadding">
                                     <div class="row">
@@ -525,6 +467,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
                         @endforeach
                     @endif

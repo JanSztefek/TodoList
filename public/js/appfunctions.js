@@ -1,3 +1,5 @@
+baseurl = document.baseURI;
+
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -40,10 +42,58 @@ function openbackground(){
     $('.close').toggleClass('hidden');
     $('body').toggleClass('b-dashboard');
 }
+used = [];
+function fetchdata(page){
+    used.push(page);
+    if(!used.includes(page)){
+        $.ajax({
+            url: baseurl + "data/"+page,
+                type: "get",
+                success:function(response){
+                    if(response){
+                           
+                        response.forEach(element => {
+                            console.log(element); 
+                            var container = `
+                            <div class="item row grid-container">
+                                <div class="row alc grid-item-1">
+                                    <div class="image">
+                                        <img src="./img/profile.png" alt="">
+                                    </div>        
+                                        
+                                    <span></span>
+                                    <p class="item-description" contenteditable="true">` + element['name'] +`</p>
+                                </div>
+                                
+                                <div class="coments text-normal grid-item-2"></div>
+                                
+                                <div class="status grid-item-3">
+                                    <span class="` + element['status'] + `"></span>
+                                </div>
+                                
+                                <p class="date-added text-normal grid-item-4">April 06</p>
+                                
+                                <div class="priority grid-item-5">
+                                    <span class="` + element['priority'] + `"></span>
+                                </div>
+                                <button class="btn-1 deleteRecord">
+                                    <img src="./img/delete.svg" alt="">
+                                </button>
+                            </div>   
+                          `;
+                            $('#'+page + ' .scroll-container > .row .item-body').append(container);
+                        });
+    
+                    }
+                }
+            });
+    }
+}
 
+fetchdata(2);
 
 function showWorkspace(page){
-    console.log(page);
+    fetchdata(page);
     $('.workspace').removeClass('active');
     $('#' + page).addClass('active');
 }
@@ -72,7 +122,6 @@ function createWorkspace(name, id){
 
 
 $(document).ready(function() {
-    
     //var dasboard_ul = ;
 
     $('nav').on('click', '#createnewdashboard', function(){
@@ -86,7 +135,6 @@ $(document).ready(function() {
 
     })
     
-    baseurl = document.baseURI;
 
     $('#workspace-create').click((e) => {
         e.preventDefault();
@@ -94,7 +142,7 @@ $(document).ready(function() {
             let name = $('#workspace-name').val();
             let _token = $('input[name=_token').val();
             $.ajax({
-                url: baseurl + "save",
+            url: baseurl + "",
                 type: "POST",
                 data:{
                     name: name,

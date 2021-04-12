@@ -16,12 +16,13 @@ class CreateWorkspaceDataTable extends Migration
         Schema::create('workspace_data', function (Blueprint $table) {
             $table->id();
             $table->foreignId('owner')->index();
+            $table->string('team_id');
             $table->string('name');
             $table->string('date');
             $table->string('status');//class
             $table->string('priority');
             //$table->string('comments');//
-            $table->boolean('personal_team');
+            //$table->boolean('personal_team');
             $table->timestamps();
         });
     }

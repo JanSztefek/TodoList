@@ -14,9 +14,11 @@ use App\Http\Controllers\WorkspaceController;
 |
 */
 
-Route::get('/', [WorkspaceController::class,'getdata'])->middleware('auth');
+Route::get('/', [WorkspaceController::class,'getWorkspace'])->middleware('auth');
 
-Route::post('/save', [WorkspaceController::class, 'saveWorkspace']);
+Route::post('/dashboard', [WorkspaceController::class, 'saveWorkspace']);
+
+Route::get('/data/{id}', [WorkspaceController::class,'getDataById'])->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [WorkspaceController::class,'getdata'])->name('dashboard');
 
