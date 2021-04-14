@@ -1,4 +1,4 @@
-baseurl = document.baseURI;
+baseurl = window.origin;
 
 function startTime() {
     var today = new Date();
@@ -42,16 +42,15 @@ function openbackground(){
     $('.close').toggleClass('hidden');
     $('body').toggleClass('b-dashboard');
 }
+
 used = [];
 function fetchdata(page){
-    used.push(page);
     if(!used.includes(page)){
         $.ajax({
             url: baseurl + "data/"+page,
                 type: "get",
                 success:function(response){
                     if(response){
-                           
                         response.forEach(element => {
                             console.log(element); 
                             var container = `
@@ -87,14 +86,20 @@ function fetchdata(page){
                     }
                 }
             });
+        used.push(page);
     }
 }
-
-fetchdata(2);
 
 function showWorkspace(page){
     fetchdata(page);
     $('.workspace').removeClass('active');
+    $('#' + page).addClass('active');
+}
+
+
+function showSection(page){
+    //$('.workspace').removeClass('active');
+    $('.box > section.active').removeClass('active');
     $('#' + page).addClass('active');
 }
 
@@ -142,7 +147,7 @@ $(document).ready(function() {
             let name = $('#workspace-name').val();
             let _token = $('input[name=_token').val();
             $.ajax({
-            url: baseurl + "",
+            url: baseurl + "/dashboardsave",
                 type: "POST",
                 data:{
                     name: name,
@@ -150,6 +155,7 @@ $(document).ready(function() {
                 },
                 success:function(response){
                     if(response){
+                        console.log('response');
                         createMenuItem($('#workspace-name').val(), response);
                         createWorkspace($('#workspace-name').val(), response);
                         showWorkspace(response, $('#workspace-name').val());
@@ -222,6 +228,12 @@ $(document).ready(function() {
     startTime();
 
     $('#iconlist #dashboard-open').click(() => {
+        showSection('dashboard');
+        openbackground();
+    });
+    
+    $('#iconlist #settings-open').click(() => {
+        showSection('settings');
         openbackground();
     });
 
@@ -258,6 +270,8 @@ $(document).ready(function() {
         $(this).parent().parent().parent().siblings('.containerInfoAboutProject').toggleClass('active');
         console.log('ok');
     })
+
+    $('.workspace:nth-child(2)').addClass('active');
 });
 
 

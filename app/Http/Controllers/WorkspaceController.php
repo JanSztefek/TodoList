@@ -8,16 +8,18 @@ use App\Models\Workspace;
 use Illuminate\Support\Facades\Auth;
 class WorkspaceController extends Controller
 {
-    function getWorkspace(){
+    function getdata(){
         $workspaces = Team::where('user_id', Auth::id())->get();
-        $workspaces = $workspaces->except(['personal_team', '1']);
-        return view("dashboard",  ['workspaces' => $workspaces]);
+        $workspaces = $workspaces->except(['personal_team', '1'])->sortBy('name');
+        return view("welcome",  ['workspaces' => $workspaces]);
     }
 
-    function getDataById($team_id){
+    
+    function getDataByHeading($team_id){
         $data = Workspace::where('team_id', $team_id)->get();
         return $data;
     }
+
 
     function saveWorkspace(Request $req){
         $workspace = new Team;
