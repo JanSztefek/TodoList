@@ -17,6 +17,8 @@ class CreateHeadingsTable extends Migration
             $table->id();
             $table->string('team_id');
             $table->string('name');
+            $table->string('color');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

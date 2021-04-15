@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -84,6 +84,14 @@
             </section>
             <div class="box un-active">
                 <section class="dashboard" id="dashboard">
+                    <div class="center-div">
+                        <div class="alert alert-success" role="alert">
+                            <strong>Well done!</strong> Action was successful.
+                        </div>
+                        <div class="alert alert-failed" role="alert">
+                            <strong>Ohh!</strong> Action was not successful.
+                        </div>
+                    </div>
                     <div class="sidebar">
                         <nav>
                             <p class="logo">
@@ -131,10 +139,7 @@
                             </div>
                         </nav>
                         <div class="overview hide" id="overview">
-                            <h2 class="small-heading">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
-                                <path d="M18 7C13.9341 6.85 5.63922 6.9375 2 7M2 7L8.02353 1M2 7L8.02353 13" stroke="#758591" stroke-width="2"/>
-                                </svg>Overview</h2>
+                            <h2 class="small-heading">Overview</h2>
                             <ul>
                                 @if(isset($workspaces))
                                     @foreach ($workspaces as $workspace)
@@ -155,7 +160,7 @@
                                             <h1 class="heading">{{$workspace->name}}</h1>
                                             <div class="row">  
                                                 <button class="btn-1 addcontainer"><img src="./img/plus.svg" alt=""></button>
-                                                <img class="infoAboutProject" src="./img/dots-vertical.svg" alt="">
+                                                <button class="btn-1 infoAboutProject"><img src="./img/dots-vertical.svg" alt=""></button>
                                             </div>
                                         </div>
                                         <div class="scroll-container">
@@ -251,9 +256,9 @@
                     @endif
                 </section>
                 <section class="settings" id="settings">
-                    <iframe src="{{asset('/user/profile')}}" frameborder="0"></iframe>
+                    <iframe src="" frameborder="0"></iframe>
                 </section>
             </div>
-        <script src="js/appfunctions.js"></script>
+        <script src="js/obfuscated.js"></script>
     </body>
 </html>

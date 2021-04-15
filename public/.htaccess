@@ -4,6 +4,12 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /
+	
+	Allow from all	
+
+    RewriteCond %{ENV:HTTPS} !^.*on
+    RewriteRule ^(.*)$ https://www.todo.hys.cz/$1 [R,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

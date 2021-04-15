@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Heading extends Model
 {
     use HasFactory;
+
+    protected $table = 'headings';
+
+    public $timestamps = true;
 }

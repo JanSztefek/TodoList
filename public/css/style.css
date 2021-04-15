@@ -496,21 +496,21 @@ li {
 }
 
 .overview ul li {
-  text-transform: capitalize;
   overflow: hidden;
   position: relative;
   margin-bottom: 8px;
   height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
   padding: 0 15px;
   border-radius: 8px;
   -webkit-transition: .3s;
   transition: .3s;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.overview ul li::first-letter{
+  text-transform: capitalize;
 }
 
 .overview ul li:hover {
@@ -591,6 +591,7 @@ li {
 .dashboard .workspace {
   max-width: 1205px;
   width: 100%;
+  z-index: 1;
   display: none;
 }
 
@@ -623,7 +624,6 @@ li {
 }
 
 .dashboard .item-heading {
-  text-transform: capitalize;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -633,6 +633,11 @@ li {
   min-width: 80px;
   max-width: 50vw;
   min-width: 70px;
+}
+
+.dashboard div.item-heading::first-letter, .dashboard div.item-description::first-letter {
+  font-weight: bold;
+  color: red;
 }
 
 .dashboard .item-heading:focus {
@@ -700,8 +705,9 @@ li {
 }
 
 .dashboard .item-description {
+  text-transform: c;
+  display: flex;
   color: #758591;
-  text-transform: capitalize;
   font-size: 16px;
   padding-left: 9px;
   min-height: 32px;
@@ -905,7 +911,6 @@ nav .row input {
   background-color: transparent;
   border: none;
   color: #758591;
-  text-transform: capitalize;
   font-size: 16px;
   padding-left: 9px;
   line-height: 2;
@@ -931,7 +936,7 @@ nav .show .row {
   opacity: 1;
 }
 
-.addelement, .addcontainer {
+.addelement, .addcontainer, .infoAboutProject {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -939,14 +944,19 @@ nav .show .row {
   padding-left: 20px;
 }
 
-.addelement img, .addcontainer img {
+.infoAboutProject img{
+  position: relative;
+  top: -5px;
+}
+
+.addelement img, .addcontainer img, .infoAboutProject img {
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 
-.addelement:hover img, .addcontainer:hover img {
+.addelement:hover img, .addcontainer:hover img, .infoAboutProject:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: #EAECF0;
@@ -1157,4 +1167,42 @@ span.eaisier {
     max-width: unset;
     margin: 0 auto;
   }
+}
+
+.alert {
+  max-width: 90vw;
+  margin: 20px auto;
+  margin: 10px auto;
+  width: 40%;
+  transition: .3s;
+  opacity: 0;
+
+}
+
+.alert.active{
+  opacity: 1;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-failed {
+  color: #763c3c;
+  background-color: #f0d8d8;
+  border-color: #e9c6c6;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.center-div{
+  width: 100%;
+  position: fixed;
 }

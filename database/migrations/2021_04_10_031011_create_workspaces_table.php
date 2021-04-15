@@ -18,7 +18,7 @@ class CreateWorkspacesTable extends Migration
             $table->foreignId('owner_id')->index();
             //$table->string('team_id');
             $table->string('heading_id');
-            $table->string('name');
+            $table->string('description');
             $table->string('date');
             $table->string('status');//class
             $table->string('priority');
