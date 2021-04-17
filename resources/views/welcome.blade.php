@@ -259,6 +259,6 @@
                     <iframe src="" frameborder="0"></iframe>
                 </section>
             </div>
-        <script src="js/obfuscated.js"></script>
+        <script src="js/appfunctions.js"></script>
     </body>
 </html>

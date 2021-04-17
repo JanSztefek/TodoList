@@ -1015,6 +1015,30 @@ nav .show .row {
   background: #B21BE7;
 }
 
+.orange-v1 > .grid-container > .row > span {
+  background: #f67e7d;
+}
+
+.orange-v1 .item-heading {
+  color: #f67e7d;
+}
+
+.orange-v1 .item span {
+  background: #f67e7d;
+}
+
+.vine-v1 > .grid-container > .row > span {
+  background: #f67e7d;
+}
+
+.vine-v1 .item-heading {
+  color: #f67e7d;
+}
+
+.vine-v1 .item span {
+  background: #f67e7d;
+}
+
 .green-v1 > .grid-container > .row > span {
   background: #48BB78;
 }
@@ -1025,6 +1049,18 @@ nav .show .row {
 
 .green-v1 .item span {
   background: #48BB78;
+}
+
+.yellow-v1 > .grid-container > .row > span {
+  background: #ffb997;
+}
+
+.yellow-v1 .item-heading {
+  color: #ffb997;
+}
+
+.yellow-v1 .item span {
+  background: #ffb997;
 }
 
 .status, .priority {

@@ -203,6 +203,7 @@ function editHeading(id, column, value){
 }
 
 used = [];
+//výpis
 function fetchdata(page){
     if(!used.includes(page)){
         let _token = $('meta[name="csrf-token"]').attr('content');
@@ -220,7 +221,7 @@ function fetchdata(page){
 
                         response.forEach(element => {
                             var heading = `
-                                <div class="items-container row purple-v1" item_id="` + element['id'] + `">
+                                <div class="items-container row ` + element['color'] + `" item_id="` + element['id'] + `">
                                 <div class="grid-container">
                                 <div class="row">
                                 <div class="item-heading" contenteditable="true" >
@@ -257,7 +258,7 @@ function fetchdata(page){
                                                         <span class="` + element['status'] + `"></span>
                                                     </div>
                                                     
-                                                    <p class="date-added text-normal grid-item-4">April 06</p>
+                                                    <p class="date-added text-normal grid-item-4">` + element['date'] + `</p>
                                                     
                                                     <div class="priority grid-item-5">
                                                         <span class="` + element['priority'] + `"></span>
@@ -448,8 +449,11 @@ $(document).ready(function() {
     })
 
     $('#dashboard').on('click', '.deletecontainer', function(){
-        deleteContainer($(this).parent().parent().attr('item_id'));
-        $(this).parent().parent().remove();
+        var r = confirm("Press a button!");
+        if (r == true) {
+           deleteContainer($(this).parent().parent().attr('item_id'));
+            $(this).parent().parent().remove();
+        }
     })
 
     $('#dashboard').on('click', '.status', function(){
