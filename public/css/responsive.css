@@ -1,0 +1,61 @@
+@media screen and (max-width: 850px) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    body {
+      background: #3d5267;
+    }
+  }
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .welcome {
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  body {
+    min-height: 0;
+  }
+  .dashboard nav > a, .dashboard nav > p {
+    width: 40px;
+  }
+  #iconlist {
+    margin-bottom: 0;
+  }
+  .welcome .item p {
+    margin-top: 6px;
+    margin-bottom: 26px;
+  }
+  .welcome > .text-normal {
+    display: none;
+  }
+  .welcome > #actualDate {
+    display: block;
+  }
+  .welcome > .text-normal-darker {
+    display: none;
+  }
+  .welcome > .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .welcome .item .icon-big {
+    width: 110px;
+    height: 110px;
+    margin: 0px;
+    font-size: 2.6em;
+    border-radius: 36px;
+  }
+  .welcome i.fa-plus {
+    font-size: .6em;
+    padding-bottom: 10px 12px;
+  }
+  .time, #actualDate {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
