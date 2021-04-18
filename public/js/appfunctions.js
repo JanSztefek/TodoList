@@ -415,7 +415,7 @@ $(document).ready(function() {
         var cloneitem = $(container).clone();
         place = $(this).parent().parent().siblings('.scroll-container');
         cloneitem.appendTo(place);
-        let color = 'red';
+        let color = 'purple-v1';
         let name = 'name';
         let _token = $('input[name=_token').val();
         let workspace_id = Number($('.workspace.active').attr('id'));
@@ -528,7 +528,7 @@ $(document).ready(function() {
     });
     
     $('#iconlist #settings-open').click(() => {
-        $('#settings ifr  ame').attr('src', baseurl +'/user/profile');
+        $('#settings iframe').attr('src', baseurl +'/user/profile');
         showSection('settings');
         openbackground();
     });

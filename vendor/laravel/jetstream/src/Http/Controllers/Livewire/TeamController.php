@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Jetstream\Jetstream;
 use App\Models\Team;
+use App\Models\Membership;
 use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
@@ -48,9 +49,23 @@ class TeamController extends Controller
     }
 
     function getdata(){
-        $workspaces = Team::where('user_id', Auth::id())->get();
-        $workspaces = $workspaces->except(['personal_team', '1'])->sortBy('name');
-        return view("welcome",  ['workspaces' => $workspaces]);
+        $workspaces = Team::where('user_id', Auth::id())
+            ->where('personal_team', '0')
+            ->get();
+        $team_id = Membership::where('user_id', Auth::id())->get('team_id');
+        $team_workspaces = [];
+        foreach($team_id as $id){
+            $value = Team::where('id', $id->team_id)
+            ->where('personal_team', '0')
+            ->get();
+            array_push($team_workspaces, $value);
+        }
+        if(isset($team_workspaces[0])){
+            return view("welcome",  ['workspaces' => $workspaces, 'team_workspaces' => $team_workspaces[0]]);
+        }
+        else{
+            return view("welcome",  ['workspaces' => $workspaces]);
+        }
     }
 
     function saveWorkspace(Request $req){

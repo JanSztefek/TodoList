@@ -22,7 +22,6 @@ Route::get('/', [TeamController::class,'getdata'])->middleware('auth');
 
 Route::post('/workspace/save', [TeamController::class, 'saveWorkspace']);
 
-
 Route::post('/heading/delete', [HeadingController::class, 'deleteHeading'])->middleware('auth');
 Route::post('/heading/save', [HeadingController::class, 'saveHeading'])->middleware('auth');
 Route::post('/heading/edit', [HeadingController::class, 'editHeading'])->middleware('auth');

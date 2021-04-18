@@ -148,7 +148,15 @@
                                         @else <li class="text-normal" onclick="showWorkspace('{{ $workspace->id }}')">{{ $workspace->name }}</li>
                                         @endif
                                     @endforeach
+                                    <?php $exist = true ?>
                                 @endif
+                                @if(isset($team_workspaces))
+                                @foreach ($team_workspaces as $workspace)
+                                    @if ($loop->first && !isset($exist)) <li class=" active text-normal" onclick="showWorkspace('{{ $workspace->id }}')">{{ $workspace->name }}</li> 
+                                    @else <li class="text-normal" onclick="showWorkspace('{{ $workspace->id }}')">{{ $workspace->name }}</li>
+                                    @endif
+                                @endforeach
+                            @endif
                             </ul>
                         </div>
                     </div>           
@@ -255,6 +263,109 @@
                             @endif
                         @endforeach
                     @endif
+                    @if(isset($team_workspaces))
+                    @foreach ($team_workspaces as $workspace)
+                        @if ($loop->first)
+                            <div class="workspace active row" id="{{$workspace->id}}">
+                                <div class="padding-default">
+                                    <div class="row alt spb">
+                                        <h1 class="heading">{{$workspace->name}}</h1>
+                                        <div class="row">  
+                                            <button class="btn-1 addcontainer"><img src="./img/plus.svg" alt=""></button>
+                                            <button class="btn-1 infoAboutProject"><img src="./img/dots-vertical.svg" alt=""></button>
+                                        </div>
+                                    </div>
+                                    <div class="scroll-container">
+                                 
+                                
+                                    </div>
+                                </div>
+
+                                <div class="containerInfoAboutProject">
+                                    <div class="contentpadding">
+                                        <div class="row">
+                                            <p>name:</p>
+                                            <p>{{$workspace->name}}</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>created:</p>
+                                            <p>14.07.2021</p>
+                                        </div>
+                                        <div class="col">
+                                            <p>people</p>
+                                            <div class="row grid-container">
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="workspace row" id="{{$workspace->id}}">
+                                <div class="padding-default">
+                                    <div class="row alt spb">
+                                        <h1 class="heading">{{$workspace->name}}</h1>
+                                        <div class="row">  
+                                            <button class="btn-1 addcontainer"><img src="./img/plus.svg" alt=""></button>
+                                            <img class="infoAboutProject" src="./img/dots-vertical.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="scroll-container">
+                                    
+                                     
+                                    </div>
+                                </div>
+
+                                <div class="containerInfoAboutProject">
+                                    <div class="contentpadding">
+                                        <div class="row">
+                                            <p>name:</p>
+                                            <p>{{$workspace->name}}</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>created:</p>
+                                            <p>14.07.2021</p>
+                                        </div>
+                                        <div class="col">
+                                            <p>people</p>
+                                            <div class="row grid-container">
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                                <div class="user-project">
+                                                    <img src="./img/profile.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
                 </section>
                 <section class="settings" id="settings">
                     <iframe src="" frameborder="0"></iframe>
