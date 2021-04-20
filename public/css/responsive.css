@@ -1,11 +1,24 @@
 @media screen and (max-width: 850px) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     body {
-      background: #fff;
+      background-color: #F3F8FE;
     }
   }
   body {
-    background: #fff;
+    background-color: #F3F8FE;
+  }
+  .time, #actualDate {
+    text-align: center;
+    font-weight: 400;
+    color: #3D4785;
+  }
+  .icon-big.blue {
+    background-color: transparent;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+  }
+  .icon-big.blue i {
+    color: #020202;
   }
   .container {
     padding-left: 30px;
@@ -56,10 +69,6 @@
   .welcome i.fa-plus {
     font-size: .6em;
     padding-bottom: 10px 12px;
-  }
-  .time, #actualDate {
-    color: black;
-    text-align: center;
   }
 }
 

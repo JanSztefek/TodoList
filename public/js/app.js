@@ -21418,3 +21418,5 @@ process.umask = function() { return 0; };
 /******/ 	
 /******/ })()
 ;
+
+$('.closetarget').click(() => {focusout()})
