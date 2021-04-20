@@ -7,7 +7,7 @@
         <meta name="theme-color" content="#F3F8FE">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'ToList') }}</title>
 
 <!-- Fonts -->       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">

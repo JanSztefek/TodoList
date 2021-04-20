@@ -195,6 +195,10 @@ i.white {
   margin: 80px -45px;
 }
 
+#welcome, .box {
+  z-index: 1;
+}
+
 .welcome .item {
   text-align: center;
 }
