@@ -1,8 +1,11 @@
 @media screen and (max-width: 850px) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     body {
-      background: #3d5267;
+      background: #fff;
     }
+  }
+  body {
+    background: #fff;
   }
   .container {
     padding-left: 30px;
@@ -55,7 +58,15 @@
     padding-bottom: 10px 12px;
   }
   .time, #actualDate {
+    color: black;
     text-align: center;
+  }
+}
+
+@media screen and (display-mode: standalone) {
+  body {
+    position: fixed;
+    top: 0;
   }
 }
 /*# sourceMappingURL=responsive.css.map */
