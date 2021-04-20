@@ -1,4 +1,4 @@
-@media screen and (max-width: 850px) {
+@media (max-width: 850px) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     body {
       background-color: #F3F8FE;
@@ -72,10 +72,13 @@
   }
 }
 
-@media screen and (display-mode: standalone) {
+@media  (display-mode: standalone) {
   body {
     position: fixed;
     top: 0;
   }
+}
+html{
+  background-color: white;
 }
 /*# sourceMappingURL=responsive.css.map */

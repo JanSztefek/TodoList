@@ -251,7 +251,7 @@ a {
   transition: .6s;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
-  background: #1B74E7;
+  background: #fff;
   height: 200vh;
   left: 0;
   top: 0;

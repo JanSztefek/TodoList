@@ -18,8 +18,12 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="web-app-status-bar-style" content="black-translucent">
+        <meta name="meta-apple-mobile-web-app-capable" content="yes"/>
         <meta name="viewport" content="initial-scale=1,user-scalable=no,viewport-fit=cover">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="meta-apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name=”“apple-mobile-web-app-status-bar-style”" content="black-translucent" />
+        <meta name="format-dection" content="telephone=no">
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">

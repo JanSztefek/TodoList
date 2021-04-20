@@ -1,6 +1,5 @@
 body {
   font-family: 'Inter', sans-serif !important;
-  overflow-y: hidden;
 }
 
 button, input, optgroup, select, textarea {
@@ -145,7 +144,7 @@ button, input, optgroup, select, textarea {
 
 @media screen and (max-width: 756px) {
   .background-primary {
-    padding-top: 15vh;
+    padding-top: 7vh;
   }
   .background-primary form > div:nth-child(3) label,
   .background-primary form > div:nth-child(2) label {
@@ -168,8 +167,10 @@ button, input, optgroup, select, textarea {
   }
   .antialiased {
     position: fixed !important;
-    overflow-y: hidden !important;
     min-width: 100%;
+  }
+  .unfixed {
+    position: static !important;
   }
   .mt-4 > label .text-sm {
     font-size: 14px !important;
@@ -181,6 +182,10 @@ button, input, optgroup, select, textarea {
   }
 }
 
+html {
+  background-color: #F3F8FE;
+}
+
 form .mt-4:last-child {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -189,6 +194,10 @@ form .mt-4:last-child {
   display: -ms-flexbox;
   display: flex;
   padding: 0 20px;
+}
+
+.min-h-screen {
+  min-height: 0;
 }
 
 .background-primary > div > svg {
