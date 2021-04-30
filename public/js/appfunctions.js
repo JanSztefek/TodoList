@@ -240,19 +240,20 @@ function fetchdata(page){
                                     },
                                     success:function(response){
                                         if(response){
+                                            let img = '<img src="http://127.0.0.1:8000/img/profile.png" alt=""></img>'
                                             response.forEach(element => {
                                                 var item = `
                                                 <div class="item row grid-container" id_item="` + element['id']  +`">
                                                     <div class="row alc grid-item-1">
                                                         <div class="image">
-                                                            <img src="./img/profile.png" alt="">
+                                                            ` + img  +`
                                                         </div>        
                                                             
                                                         <span></span>
                                                         <p class="item-description" contenteditable="true">` + element['description'] +`</p>
                                                     </div>
                                                     
-                                                    <div class="coments text-normal grid-item-2"></div>
+                                                    <div class="coments text-normal grid-item-2" >L O L</div>
                                                     
                                                     <div class="status grid-item-3">
                                                         <span class="` + element['status'] + `"></span>
@@ -269,6 +270,7 @@ function fetchdata(page){
                                                 </div>   
                                               `;
                                               $("[item_id='" + heading_id +"'] .item-body").append(item);
+                                              img = '';
                                             });
                                             
                         
@@ -565,6 +567,13 @@ $(document).ready(function() {
         $('#openoverview').removeClass('active');
         $(this).parent().parent().parent().siblings('.containerInfoAboutProject').toggleClass('active');
      
+    })
+
+    $('.dashboard').on('click', '.coments', function(){
+        id = $(this).closest('.item').attr('id_item');
+        //ajax open comments where id_item is == id_item;
+        //rewrite info in div
+        alert(id);
     })
 
     //$('.workspace:nth-child(2)').addClass('active');

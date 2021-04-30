@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>ToList</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
         <!-- Styles -->
     </head>
     <body class="un-b-dashboard">
-            
             <div class="colorpicker">
                 <div class="row done">
                     <p class="text-normal first">Done</p>
@@ -188,7 +187,8 @@
                                                 <p class="item-description" contenteditable="true">Zprovoznit hosting včetně konfigurace</p>
                                             </div>
                                             
-                                            <div class="coments text-normal grid-item-2"></div>
+                                            <div class="coments text-normal grid-item-2">
+                                            </div>
                                             
                                             <div class="status grid-item-3">
                                                 <span class="active"></span>

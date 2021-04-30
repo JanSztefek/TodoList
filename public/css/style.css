@@ -776,6 +776,8 @@ li {
 .dashboard .image {
   background: white;
   padding-right: 14px;
+  min-width: 37px;
+    min-height: 37px;
 }
 
 .small-heading {
