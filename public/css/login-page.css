@@ -1,6 +1,5 @@
 body {
   font-family: 'Inter', sans-serif !important;
-  overflow-y: hidden;
 }
 
 button, input, optgroup, select, textarea {
@@ -135,6 +134,7 @@ button, input, optgroup, select, textarea {
 
 .jtc-all input {
   padding-left: 10px !important;
+  margin-left: 12px;
 }
 
 .jtc-all i {
